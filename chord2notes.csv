@@ -1,0 +1,13 @@
+Chord,Major,Minor,7th,Aug(+)
+C,"C,E,G","C,Eb,G",Bb,"C,E,G#"
+Db/C#,"Db,F,Ab","Db,E,Ab",B,"Db,F,A"
+D,"D,F#,A","D,F,A",C,"D,F#,Bb"
+Eb/D#,"Eb,G,Bb","Eb,Gb,Bb",Db,"Eb,G,B"
+E,"E,G#,B","E,G,B",D,"E,G#,C"
+F,"F,A,C","F,Ab,C",Eb,"F,A,C#"
+Gb/F#,"Gb,Bb,Db","Gb,A,Db",E,"Gb,Bb,D"
+G,"G,B,D","G,Bb,D",F,"G,B,D#"
+Ab/G#,"Ab,C,Eb","Ab,B,Eb",F#,"Ab,C,E"
+A,"A,C#,E","A,C,E",G,"A,C#,F"
+Bb/A#,"Bb,D,F","Bb, Db,F",Ab,"Bb,D,Gb"
+B,"B,D#,F#","B,D,F#",A,"B,D#,G"
