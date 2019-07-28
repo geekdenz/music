@@ -3,7 +3,6 @@ import {transpose} from 'chord-transposer'
 import {readFileSync} from 'fs'
 const csvFilePath='chord2notes.csv'
 const read = process.argv[2] !== 'runner' ? process.argv[2] : 'Cmaj7 Bb7 C7 Em Em7 A Em Em7'
-console.log(read.split(' ').join(' | '))
 let chords = read
 const csv = require('csvtojson')
 const notes = {
@@ -78,6 +77,7 @@ async function main(chords: string) {
     })
     // fs
     const valid = fs.join(' | ')
+    console.log(read.split(' ').map((c, i) => c.padStart(fs[i].length, ' ')).join(' | '))
     console.log(valid)
 }
 main(chords)

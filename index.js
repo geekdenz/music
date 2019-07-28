@@ -48,9 +48,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var chord_transposer_1 = require("chord-transposer");
 var csvFilePath = 'chord2notes.csv';
-var read = process.argv[2];
-console.log(read);
-var chords = read || 'Bb7 C7 Em Em7 A Em Em7';
+var read = process.argv[2] !== 'runner' ? process.argv[2] : 'Cmaj7 Bb7 C7 Em Em7 A Em Em7';
+var chords = read;
 var csv = require('csvtojson');
 var notes = {
     'C': 0,
@@ -99,6 +98,7 @@ function main(chords) {
                 var minor = suffix.length > 0 ? suffix.charAt(0) === 'm' : false;
                 // minor
                 var seventh = !!(suffix.length && suffix.indexOf('7') !== -1);
+                var maj = !!(suffix.indexOf('maj') !== -1);
                 // seventh
                 var s = '';
                 var tonic = notes[root] || flats[root] || sharps[root] || 0;
@@ -114,12 +114,16 @@ function main(chords) {
                 }
                 // third
                 s += notesBack[tonic] + " " + notesBack[third % 12] + " " + notesBack[fifth % 12];
-                if (seventh) {
+                if (maj && seventh) {
+                    s += " " + notesBack[(tonic + 11) % 12];
+                }
+                else if (seventh) {
                     s += " " + notesBack[(tonic + 10) % 12];
                 }
                 return s;
             });
             valid = fs.join(' | ');
+            console.log(read.split(' ').map(function (c, i) { return c.padStart(fs[i].length, ' '); }).join(' | '));
             console.log(valid);
             return [2 /*return*/];
         });
